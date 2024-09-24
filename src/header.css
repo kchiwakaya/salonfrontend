@@ -1,0 +1,16 @@
+.logo{
+    height: 150px;
+}
+
+.subtitle{
+    font-style: italic;
+    font-size: x-large;
+    color: cornflowerblue;
+}
+
+.navbar-brand .logo {
+    width: 60px;  /* Adjust this value to your preferred size */
+    height: 60px; /* Keep it equal to width for a perfect circle */
+    object-fit: cover; /* This ensures the image covers the area without stretching */
+    border-radius: 50%; /* This makes the image circular */
+}
