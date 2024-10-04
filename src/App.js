@@ -8,15 +8,16 @@ import AppointmentBooking from './Booking';
 import 'bootstrap/dist/css/bootstrap.min.css';
 import Register from './Register';
 import LoginForm from './Login';
-import Stylists from './Stylists';
+//import Stylists from './Stylists';
 import DataDisplay from './Load';
+import StylistsList from './Stylists';
 const App = () => {
   return (
     <Router>
       <div>
         <Header />
         <Routes>
-          <Route path="/" element={<Stylists />} />
+          <Route path="/" element={<StylistsList/>} />
           <Route path="/load" element={<DataDisplay />} />
           {/* <Route path="/" element={<DataDisplay />} />  // Use DataDisplay as the home page */}
           <Route path="/add-style" element={<StyleForm />} />
