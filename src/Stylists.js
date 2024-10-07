@@ -22,6 +22,7 @@ const StylistsList = () => {
 
   return (
     <div className="container mt-5">
+
       <div className="row">
         {stylistsData.map((stylist) => (
           <div className="col-md-4 mb-4" key={stylist.id}>
@@ -33,7 +34,7 @@ const StylistsList = () => {
                 <p className="card-text">Address: {stylist.address}</p>
                 <p className="card-text">City: {stylist.city}</p>
                 <p className="card-text">Phone4444: {stylist.phone_number}</p>
-                <Link to="/load" className="btn btn-primary">View Offers</Link>
+                <Link to={`/load/${stylist.id}`} className="btn btn-primary">View Offers</Link>
               </div>
             </div>
           </div>

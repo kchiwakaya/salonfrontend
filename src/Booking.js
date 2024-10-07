@@ -9,6 +9,7 @@ const localizer = momentLocalizer(moment);
 
 const AppointmentBooking = () => {
   const { name } = useParams();
+  //const {id} = useParams();
   const [events, setEvents] = useState([]);
   const [message, setMessage] = useState(null);
   const [selectedEvent, setSelectedEvent] = useState(null);

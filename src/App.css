@@ -12,6 +12,9 @@
     animation: App-logo-spin infinite 20s linear;
   }
 }
+.rounded-image {
+  border-radius: 50%; /* Makes the image rounded */
+}
 
 .App-header {
   background-color: #282c34;

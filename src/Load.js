@@ -1,24 +1,25 @@
 import React, { useEffect, useState } from 'react';
-import { Link } from 'react-router-dom';
+import { Link, useParams } from 'react-router-dom'; // Add this import
 import axios from 'axios';
 import logo from "./bg-1.jpg"
 
 function DataDisplay() {
+    const { id } = useParams();
     const [data, setData] = useState([]);
   
     useEffect(() => {
       const fetchData = async () => {
         try {
-          const response = await axios.get('http://127.0.0.1:8000/styles/stylist/2/');
+          const response = await axios.get(`http://127.0.0.1:8000/styles/stylist/${id}/`); // Use the stylist ID here
           setData(response.data);
-          console.log(response.data)
+          console.log(response.data);
         } catch (error) {
           console.error(error);
         }
       };
   
       fetchData();
-    }, []);
+    }, [id]); // Add id to the dependency array
   
     return (
       <div className='container'> 
@@ -29,12 +30,12 @@ function DataDisplay() {
           data.map((item) => (
             <div className="col-md-3 p-3" key={item.id}>
               <div className='card p-3' style={{width: 300}}>
-                <img className='card-img-top' src={logo} alt='Card image cap'/>
+                <img className='card-img-top' src={logo} alt='Card cap'/>
                 <div className='card-body'>
                   <h5 className='card-title'>{item.name}</h5>
                   <p className='card-text'>{item.description}</p>
                   <h6 className='card-footer'>{item.price}</h6>
-                  <Link to="/book-appointment" className='btn btn-primary'>Book Now</Link>
+                  <Link to={`/book-appointment/${id}`}  className='btn btn-primary'>Book Now</Link>
                 </div>
               </div>
             </div>
