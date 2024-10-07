@@ -29,13 +29,13 @@ function DataDisplay() {
         ) : (
           data.map((item) => (
             <div className="col-md-3 p-3" key={item.id}>
-              <div className='card p-3' style={{width: 300}}>
+              <div className='card p-4' style={{width: 300}}> {/* Increased padding here */}
                 <img className='card-img-top' src={logo} alt='Card cap'/>
                 <div className='card-body'>
                   <h5 className='card-title'>{item.name}</h5>
                   <p className='card-text'>{item.description}</p>
                   <h6 className='card-footer'>{item.price}</h6>
-                  <Link to={`/book-appointment/${id}`}  className='btn btn-primary'>Book Now</Link>
+                  <Link to={`/book-appointment/${id}`} className='btn btn-primary'>Book Now</Link>
                 </div>
               </div>
             </div>

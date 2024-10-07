@@ -10,11 +10,13 @@ import LoginForm from './Login';
 //import Stylists from './Stylists';
 import DataDisplay from './Load';
 import StylistsList from './Stylists';
+import Footer from './footer';
 const App = () => {
   return (
     <Router>
       <div>
         <Header />
+      
         <Routes>
           <Route path="/" element={<StylistsList/>} />
           <Route path="/load/:id" element={<DataDisplay />} />
@@ -26,6 +28,7 @@ const App = () => {
           
          
         </Routes>
+        <Footer />
       </div>
     </Router>
   );
